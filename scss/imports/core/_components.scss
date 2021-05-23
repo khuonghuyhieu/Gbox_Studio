@@ -1,0 +1,146 @@
+// css components
+$pdText:30px;
+.container{
+    // display: flex;
+    // justify-content: center;
+    // position: relative;
+    .textbox{
+    width: 750px;
+    text-align: center;
+    &__hello{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0 0 $pdText;
+        p{
+            @include text(14px,$font-hi,25px,$text-cl,uppercase);
+            letter-spacing: 2px;
+            width: 80px;
+        }
+        &.--left{
+            justify-content: flex-start;
+            padding: 0;
+            line-height: 20px;
+            @include text(14px,$font-hi,20px,$text-cl,uppercase);
+        }
+    }
+    &__name{
+        @include text(20px,$font-name,$lh-text,#525355,uppercase);
+        letter-spacing: 3px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin-bottom: $pdText;
+        &::after{
+            content: "";
+            width: 188px;
+            height: 100%;
+            background-color: $yellow-color;
+            position: absolute;
+            display: inline-block;
+            left: 50%;
+            @include transform(translateX(-50%));
+        }
+        p{
+            width: 188px;
+            position: relative;
+            z-index: 100;
+        }
+    }
+    &__des{
+        @include text(12px,$font-main,22px,$text-cl,normal);
+        padding: 0 0 $pdText*2;
+        b{
+            font-weight: bold;
+        }
+    }
+    @include xs{
+        .textbox__des{
+            display: none;
+        }
+    }
+}
+}
+
+.news__item{
+    &-img{
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 60%;
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 50%;
+            top: 50%;
+            object-fit: cover;
+            @include transition($t);
+            @include transform(translate(-50%,-50%) scale(1));
+            &:hover{
+                @include transition($t);
+                @include transform(translate(-50%,-50%) scale(1.07));
+            }
+        }
+    }
+    &-text{
+        text-align: center;
+        a{
+            text-decoration: none;
+            &::after{
+                content: "";
+                width: 15px;
+                height: 3px;
+                background-color: $yellow-color;
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+            p{
+                @include text(12px,$font-name,$lh-text,$text-cl,uppercase);
+                margin-top: 40px;
+            }
+        }
+        p{
+            padding: 0 0 10px;
+            @include text(12px,$font-news,$lh-text,$text-cl,uppercase);
+            i{
+                font-style: italic;
+            }
+        }
+    }
+
+    @include xs{
+        .news__item-text{
+            a{
+                p{
+                    @include text(14px,$font-name,$lh-text,$text-cl,uppercase);
+                }
+            }
+            p{
+                @include text(14px,$font-news,$lh-text,$text-cl,uppercase);
+            }
+        }
+    }
+}
+
+.back{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    span{
+        @include text(12px,$font-news,$lh-text,$text-cl,normal);
+        img{
+            margin-left: 30px;
+            @include transform(rotate(90deg));
+        }
+    }
+    p{
+        display: flex;
+        @include text(12px,$font-news,$lh-text,$text-cl,normal);
+        img{
+            width: 15px;
+            margin-left: 30px;
+        }
+    }
+}

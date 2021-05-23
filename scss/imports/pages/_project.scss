@@ -1,0 +1,93 @@
+.projectpage{
+    .slider{
+        .container{
+            position: relative;
+            &::after{
+                content: "";
+                width: 980px;
+                height: 1px;
+                background-color: $black-cl;
+                position: absolute;
+                bottom: 0;
+                display: block;
+            }
+            .slider__btn{
+                display: flex;
+                justify-content: space-between;
+                &--pro{
+                    p{
+                        @include text(14px,$font-hi,$lh-text,$text-cl,uppercase);
+                    }
+                }
+            }
+            .slider__wrap{
+                padding-bottom: 40px;
+            }
+            .slider__text{
+                display: flex;
+                justify-content: space-between;
+                width: 910px;
+                h2{
+                    padding-bottom: 20px;
+                    letter-spacing: 2px;
+                }
+                p{
+                    text-align: left;
+                }
+                &--dct{
+                    width: 310px;
+                }
+                &--clt{
+                    width: 60px;
+                    p{
+                        font-style: italic;
+                    }
+                }
+                &--abt{
+                    width: 175px;
+                    p{
+                        padding: 0;
+                        text-transform: uppercase;
+                    }
+                    i{
+                        font-style: italic;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+        @include xs{
+            .container{
+                padding: 0;
+                &::after{
+                    width: 100%;
+                }
+                .slider__btn{
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    .backtoall{
+                        justify-content: flex-end;
+                        p{
+                            display: none;
+                        }
+                    }
+                }
+                .slider__text{
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    display: block;
+                    padding-bottom: 40px;
+                    p{
+                        display: block;
+                        padding: 0 0 50px;
+                    }
+                    &--abt{
+                        p{
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

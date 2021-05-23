@@ -1,0 +1,150 @@
+// // css footer
+footer{
+    background-color: $yellow-color;
+    padding-bottom: 50px;
+    .info{
+        background-color: $white-cl;
+        .container{
+            .info__wrap{
+                padding-left: 20px;
+                padding-right: 20px;
+                display: flex;
+                justify-content: space-between;
+                @include text(12px,$font-news,$lh-text,$text-cl,uppercase);
+                
+                &-left{
+                    p{
+                    padding-bottom: 20px;
+                    }
+                    .tel{
+                        padding-top: 30px;
+                    }
+                }
+                &-right{
+                    width: 460px;
+                    p{
+                        width: 215px;
+                        letter-spacing: 1px;
+                        line-height: 30px;
+                    }
+                }  
+            }
+        }
+    }
+    .address{
+        padding-top: 20px;
+        padding-bottom: 50px;
+        .container{
+            .address__wrap{
+                padding-left: 20px;
+                padding-right: 20px;
+                display: flex;
+                justify-content: space-between;
+                &-left{
+                    p{
+                        @include text(12px,$font-news,30px,$text-cl,uppercase);
+                    }
+                }
+                &-right{
+                    width: 460px;
+                    position: relative;
+                    p{
+                        @include text(12px,$font-news,$lh-text,$text-cl,capitalize);
+                        padding-bottom: 30px;
+                    }
+                    img{
+                        padding-bottom: 25px;
+                    }
+                    &.--left{
+                        position: relative;
+                    }
+                    &.--right{
+                        width: 220px;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        .btn-send{
+                            display: flex;
+                            justify-content: flex-end;
+                            a{
+                                text-decoration: none;
+                                @include text(10px,$font-name,$lh-text,$text-cl,uppercase);
+                                color: $white-cl;
+                                // border: 1px solid #000;
+                                padding: 10px;
+                                background-color: #000;
+                                @include transition($t);
+                                &:hover{
+                                    background-color: $white-cl;
+                                    color: #000;
+                                    @include transition($t);
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .backtop{
+        text-align: center;
+        padding-bottom: 120px;
+        &__img{
+            cursor: pointer;
+            padding-bottom: 20px;
+            width: 20px;
+            @include transform(translateY(0px));
+            @include transition($t);
+            &:hover{
+                @include transform(translateY(-10px));
+                @include transition($t);
+            }
+        }
+        p{
+            @include text(10px,$font-news,$lh-text,$text-cl,uppercase);
+        }
+    }
+    @include xs{
+        padding-bottom: 20px;
+        .info{
+            .container{
+                .info__wrap{
+                    text-align: center;
+                    &-left{
+                        width: 100%;
+                        .tel{
+                            padding: 0;
+                        }
+                    }
+                    &-right{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .address{
+            background-color: $white-cl;
+            padding-bottom: 20px;
+            .container{
+                .address__wrap{
+                    text-align: center;
+                    &-left{
+                        width: 100%;
+                        p{
+                            line-height: normal;
+                            padding-bottom: 20px;
+                        }
+                    }
+                    &-right{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .backtop{
+            padding-top: 50px;
+        }
+    }
+}
+

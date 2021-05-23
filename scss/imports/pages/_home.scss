@@ -1,0 +1,122 @@
+// CSS HOMEPAGE
+.homepage{
+    .introduce{
+        .container{
+            display: flex;
+            justify-content: center;
+            position: relative;
+            &::after{
+                content: "";
+                width: 320px;
+                height: 1px;
+                background-color: $black-cl;
+                position: absolute;
+                bottom: 0;
+            }
+        }
+        @include xs{
+            padding: 40px 0 0;
+            .container{
+                &::after{
+                    display: none;
+                }
+            }
+        }
+    }
+    .project{
+        padding-top: 0;
+        .container{
+            .tab{
+                display: flex;
+                justify-content: center;
+                padding: 0 0 20px;
+                a{
+                    text-decoration: none;
+                    @include text(12px,$font-stack,$lh-text,#898989,uppercase);
+                    padding: 0 40px;
+                    @include transition($t);
+                    &:hover{
+                        @include transition($t);
+                        color: $black-cl;
+                    }
+                }
+            }
+            .news__grid{
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                grid-template-rows: repeat(2,1fr);
+                row-gap: 70px;
+                column-gap: 20px;
+                padding-bottom: 80px;
+                overflow: hidden;
+            }
+            .allWork{
+                width: 100%;
+                padding-bottom: 75px;
+                display: flex;
+                justify-content: center;
+                &__wrap{
+                    width: 7%;
+                    text-align: center;
+                    &:hover{
+                        img{
+                            @include transform(translateY(10px));
+                            @include transition($t);
+                        }
+                    }
+                    p{
+                        cursor: pointer;
+                        @include text(12px,$font-stack,$lh-text,$text-cl,uppercase);
+                        font-weight: bold;
+                        padding-bottom: 15px;
+                    }
+                    img{
+                        cursor: pointer;
+                        @include transform(translateY(0px));
+                        @include transition($t);
+                    }
+                }
+            }
+            &::after{
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: $black-cl;
+                display: inline-block;
+            }
+        }
+        @include xs{
+            max-width: 100%;
+            padding-bottom: 50px;
+            .container{
+                padding: 0;
+                .tab{
+                    display: none;
+                }
+                .news__grid{
+                    grid-template-columns: repeat(1,1fr);
+                    grid-template-rows: auto;
+                    row-gap: 50px;
+                    .news__item{
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+                .allWork{
+                    padding-bottom: 40px;
+                }
+            }
+        }
+    }
+    .contac{
+        padding: 0;
+        @include xs{
+            .contac__wrap{
+                &-inQuestion{
+                    display: none;
+                }
+            }
+        }
+    }
+}

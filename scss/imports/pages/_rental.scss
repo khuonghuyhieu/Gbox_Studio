@@ -1,0 +1,211 @@
+.rentalpage{
+    .rental{
+        padding-bottom: 60px;
+        .container{
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            &::after{
+                content: "";
+                width: 980px;
+                height: 1px;
+                background: $black-cl;
+                position: absolute;
+                bottom: 0;
+            }
+            .numberStudio{
+                display: block;
+                width: 100%;
+            }
+            .rental__text{
+                width: 260px;
+                height: 640px;
+                background-color: #525355;
+                &-wrap{
+                    padding-top: 40px;
+                    h2{
+                        @include text(32px,$font-title,$lh-text,$white-cl,uppercase);
+                        margin-left: 20px;
+                        margin-top: 50px;
+                    }
+                    .number{
+                        margin-left: 20px;
+                    }
+                    .dms{
+                        margin-left: 20px;
+                        p{
+                            color: $white-cl;
+                        }
+                    }
+                }
+                
+            }
+            .rental__detail{
+                width: 610px;
+                padding-top: 75px;
+                &-com{
+                    width: 530px;
+                    &-title{
+                        h2{
+                            @include text(28px,$font-title,$lh-text,$text-cl,uppercase);
+                            padding-bottom: 50px;
+                        }
+                    }
+                    &-input{
+                        position: relative;
+                        p{
+                            @include text(12px,$font-news,30px,$text-cl,capitalize);
+                        }
+                        &.--left{
+                            width: 230px;
+                        }
+                        &.--right{
+                            width: 230px;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            .com{
+                                padding-bottom: 13px;
+                            }
+                        }
+                    }
+                }
+                &-book{
+                    padding-top: 130px;
+                    &-title{
+                        h2{
+                            @include text(28px,$font-title,$lh-text,$text-cl,uppercase);
+                            padding-bottom: 40px;
+                        }
+                    }
+                    &-number{
+                        p{
+                            @include text(12px,$font-news,$lh-text,$text-cl,capitalize);
+                            padding-bottom: 20px;
+                        }
+                        .number__wrap{
+                            padding-bottom: 45px;
+                            a{
+                                text-decoration: none;
+                                @include text(24px,$font-studio,$lh-text,#b4b4b4,normal);
+                                padding: 10px;
+                                border: 2px solid #464646;
+                                background-color: #000;
+                                margin-right: 20px;
+                                margin-bottom: 45px;
+                                @include transition($t);
+                                &:hover{
+                                    @include transition($t);
+                                    background-color: $yellow-color;
+                                    color: $black-cl;
+                                }
+                            }
+                        }
+                    }
+                    &-textarea{
+                        position: relative;
+                        p{
+                            @include text(12px,$font-news,$lh-text,$text-cl,capitalize);
+                            padding-bottom: 20px;
+                        }
+                        &.--left{
+                            width: 220px;
+                        }
+                        &.--right{
+                            width: 308px;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                        }
+                    }
+                    &-day{
+                        padding-bottom: 30px;
+                        p{
+                            @include text(12px,$font-news,$lh-text,$text-cl,capitalize);
+                            padding-bottom: 20px;
+                        }
+                        padding-top: 30px;
+                        .img{
+                            span{
+                                @include text(12px,$font-news,$lh-text,$text-cl,normal);
+                                display: flex;
+                                align-items: center;
+                                font-style: italic;
+                            }
+                            display: flex;
+                            justify-content: space-between;
+                            &__left{
+                                width: 220px;
+                                position: relative;
+                                &-day{
+                                    padding-left: 10px;
+                                    padding-right: 10px;
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    position: absolute;
+                                    top: 20%;
+                                }
+                            }
+                            &__right{
+                                position: relative;
+                                width: 308px;
+                                &-day{
+                                    padding-left: 10px;
+                                    padding-right: 10px;
+                                    width: 220px;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    position: absolute;
+                                    top: 20%;
+                                }
+                            }
+                            .img__center{
+                                width: 20px;
+                                @include transform(rotate(-90deg));
+                            }
+                        }
+                    }
+                    &-input{
+                        padding-bottom: 50px;
+                        p{
+                            @include text(12px,$font-news,$lh-text,$text-cl,capitalize);
+                            padding-bottom: 20px;
+                        }
+                        img{
+                            padding-bottom: 20px;
+                        }
+                    }
+                    &-submit{
+                        display: flex;
+                        padding-bottom: 80px;
+                        .submit{
+                        margin-right: 20px;
+                        border-radius: 15%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100px;
+                        height: 100px;
+                        background-color: #525355;
+                        @include text(20px,$font-title,$lh-text,$yellow-color,uppercase);
+                        }
+                        .text{
+                            width: 200px;
+                            @include text(12px,$font-news,24px,$text-cl,normal);
+                        }
+                    }
+                }
+            }
+        }
+    @include xs{
+        .rental__text{
+            display: none;
+        }
+        .rental__detail{
+            width: 100%;
+        }
+    }        
+    
+    }
+}

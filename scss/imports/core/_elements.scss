@@ -1,0 +1,114 @@
+// // css button, title, icon, elements...
+img{
+    max-width: 100%;
+}
+.numberStudio{
+    display: flex;
+    justify-content: space-between;
+    width: 325px;
+    .number{
+        width: 120px;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: $yellow-color;
+        p{
+            @include text(11px,$font-news,$lh-text,$text-cl,uppercase);
+        }
+        span{
+            @include text(60px,$font-studio,$lh-text,$text-cl,normal);
+        }
+    }
+    .dms{
+        padding-top: 30px;
+        .text{
+            @include text(12px,$font-news,$lh-text,$text-cl,uppercase);
+            padding-bottom: 20px;
+        }
+        .size{
+            @include text(14px,$font-news,$lh-text,$text-cl,normal);
+        }
+    }
+}
+.dms{
+    padding-top: 30px;
+    .text{
+        @include text(12px,$font-name,$lh-text,$text-cl,uppercase);
+        padding-bottom: 20px;
+        &.--white{
+            color: #f4f4f4;
+        }
+    }
+    .size{
+        @include text(14px,$font-news,$lh-text,$text-cl,normal);
+        &.--white{
+        color: #f4f4f4;
+        }
+    }
+}
+.textinfo{
+    .title{
+        @include text(32px,$font-title,$lh-text,$text-cl,capitalize);
+        padding-bottom: 30px;
+    }
+    .des{
+        @include text(14px,$font-news,20px,$text-cl,normal);
+        padding-bottom: 30px;
+    }
+}
+
+.btnslider{
+    width: 165px;
+    display: flex;
+    justify-content: space-between;
+    span{
+        font-family: $font-news;
+        vertical-align: top;
+        font-size: 12px;
+        text-transform: capitalize;
+    }
+    .after{
+        width: 12px;
+        height: 1px;
+        display: inline-block;
+        @include transform(rotate(90deg));
+        background-color: #000;
+        margin-top: 7px;
+        &.--yellow{
+            background-color: $yellow-color;
+        }
+    }
+    .prev{
+        &.--yellow{
+            color: $yellow-color;
+            // img{
+            //     @include transform(rotate(180deg));
+            // }
+        }
+        cursor: pointer;
+        img{
+            @include transform(rotate(90deg));
+            margin-bottom: 1px;
+            width: 15px;
+        }
+        span{
+            margin-left: 10px;
+        }
+    }
+    .next{
+        &.--yellow{
+            color: $yellow-color;
+        }
+        cursor: pointer;
+        img{
+            @include transform(rotate(-90deg));
+            margin-bottom: 1px;
+            width: 15px;
+        }
+        span{
+            margin-right: 10px;
+        }
+    }
+}

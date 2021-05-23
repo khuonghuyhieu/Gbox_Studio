@@ -1,0 +1,174 @@
+// css header
+header{
+    height: $heightHeader;
+    width: 100%;
+    .header{
+        position: fixed;
+        width: 100%;
+        z-index: 200;
+        &-top{
+        height: $header;
+        background-color: #525355;
+            .container{
+                position: relative;
+                height: 100%;
+                @include mid(true);
+                .logo{
+                    cursor: pointer;
+                    position: absolute;
+                    left: 50%;
+                    @include transform(translateX(-50%));
+                    img{
+                        filter: drop-shadow(-1px 1px 13px #3d3e3f);
+                        -webkit-filter: drop-shadow(-1px 1px 13px #3d3e3f);
+                        -moz-filter: drop-shadow(-1px 1px 13px #3d3e3f);
+                    }
+
+                }
+                .logo-fb{
+                    cursor: pointer;
+                    position: absolute;
+                    right: 37px;
+                    img{
+                        width: 20px;
+                    }
+                }
+            }
+        }
+        &-menu{
+            background-color: #fff;
+            height: $header;
+            a{
+                height: 100%;
+                text-decoration: none;
+                @include text(12px,$font-stack,normal,$text-cl,uppercase);
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                @include transition($t);
+                &:hover{
+                    @include transition($t);
+                    color: $yellow-color;
+                }
+            }
+            .container{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+                .menu-center{
+                    display: flex;
+                    position: absolute;
+                    left: 50%;
+                    @include transform(translateX(-50%));
+                    height: 100%;
+                    li{
+                        height: 100%;
+                        a{
+                            display: flex;
+                            align-items: center;
+                            padding: 0 40px;
+                        }
+                    }
+                }
+                &::after{
+                    content: "";
+                    width: 980px;
+                    height: 2px;
+                    background: $black-cl;
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+        }    
+    }
+    .btnmenu{
+        cursor: pointer;
+        display: none;
+        width: 40px;
+        height: 20px;
+        position: relative;
+        z-index: 300;
+        margin-right: 300px;
+            span{
+                width: 100%;
+                height: 2px;
+                display: block;
+                background: $yellow-color;
+                position: absolute;
+                top: 50%;
+                @include transform(translateY(-50%));
+                @include transition($t);
+            }
+            &::after,&::before{
+                content: "";
+                width: 100%;
+                height: 2px;
+                display: block;
+                background: $yellow-color;
+                @include transform(rotate(0deg) translateY(0px));
+                @include transition(transform $t);
+            }
+            &::after{
+                position: absolute;
+                bottom: 0;
+            }
+            &.clicked{
+                &::before{
+                    @include transform(rotate(45deg) translate(6px,8px));
+                    @include transition(transform $t);
+                    }
+                    span{
+                        opacity: 0;
+                        @include transition($t);
+                    }
+                    &::after{
+                        @include transform(rotate(-45deg) translate(4px,-8px));
+                        @include transition(transform $t);
+                    }
+                }
+    }
+    .nav{
+        display: none;
+            width: 100vw;
+            height: 100vh;
+            background: $black-cl;
+            position: fixed;
+            top: 0;
+            left: 0;
+            @include transform(initial);
+            z-index: 200;
+
+            opacity: 1;
+            @include transition(opacity $t);
+            ul{
+                flex-direction: column;
+                @include mid(false);
+                li{
+                    text-align: center;
+                    margin: 15px auto;
+                    padding: 10px;
+                    a{
+                        color: $white-cl;
+                    }
+                }
+            }
+            &.active{
+                opacity: 1;
+                @include transition(opacity $t);
+            }
+    }
+    @include xs{
+        height: 70px;
+        .header{
+            &-menu{
+                display: none;
+            }
+        }
+        .btnmenu{
+            display: block;
+        }
+    }
+}
